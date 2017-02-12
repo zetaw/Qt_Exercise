@@ -35,9 +35,9 @@ void Widget::on_pushButton_clicked()
     int i,j;QRgb value;int r,g,b;
     for (i=0;i<n;i++){
         for (j=0;j<n;j++){
-            r=(int)(i/(n/256))%256;
-            g=(int)(j/(n/256))%256;
-            b=(int)(pow(i+j,3))%256;
+            r=(int)(i*cos(i)/(n/256))%256;
+            g=(int)(j*sin(j)/(n/256))%256;
+            b=(int)(atan(i+j))%256;
             value=qRgb(r,g,b);
             qi.setPixel(i,j,value);
         }
